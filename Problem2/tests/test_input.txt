@@ -1,0 +1,5 @@
+talk1 25min
+talk2 60min
+talk3 45min
+talk4 lightning
+talk5 30min
