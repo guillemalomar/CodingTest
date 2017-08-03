@@ -1,4 +1,5 @@
-#!/bin/bash
+
+#Commands to run the different applications tests
 
 nosetests TrainsPythonGA/tests/GivenTests.py
 
