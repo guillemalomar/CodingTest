@@ -16,6 +16,35 @@ class MerchantTool:
         pass
 
     @staticmethod
+    def calculate_assigns(input_data):
+        for row in input_data:
+            lines = row.split('\n')
+            for line in lines:
+                m = MerchantTool._assign_sentence.match(line)
+                if m is not None:
+                    key, val = m.groups()
+                    MerchantTool.assigns[key] = val
+                else:
+                    n = MerchantTool._assign_sentence_2.match(line)
+                    if n is not None:
+                        key, val = n.groups()
+                        MerchantTool.materials.append(key.split(' ')[-1])
+                        MerchantTool.complex_assigns[key] = val
+                    else:
+                        if '?' in line:
+                            MerchantTool.questions.append(line)
+                        else:
+                            raise SyntaxError
+
+    @staticmethod
+    def calculate_coin_values():
+        for key_assign, val_assign in MerchantTool.complex_assigns.iteritems():
+            coin = key_assign.split(' ')[-1]
+            quantity = key_assign.split(' ')[0: -1]
+            total_quantity = MerchantTool.process_value_question(quantity)
+            MerchantTool.assigns[coin] = float(val_assign) / float(total_quantity)
+
+    @staticmethod
     def process_value_question(coins):
         initial = True
         total_val = 0
@@ -46,29 +75,3 @@ class MerchantTool:
         value = MerchantTool.process_value_question(coins_to_process)
         total_value = value * MerchantTool.assigns[coin_material]
         return total_value
-
-    @staticmethod
-    def calculate_assigns(input_data):
-        for row in input_data:
-            lines = row.split('\n')
-            for line in lines:
-                m = MerchantTool._assign_sentence.match(line)
-                if m is not None:
-                    key, val = m.groups()
-                    MerchantTool.assigns[key] = val
-                else:
-                    n = MerchantTool._assign_sentence_2.match(line)
-                    if n is not None:
-                        key, val = n.groups()
-                        MerchantTool.materials.append(key.split(' ')[-1])
-                        MerchantTool.complex_assigns[key] = val
-                    else:
-                        MerchantTool.questions.append(line)
-
-    @staticmethod
-    def calculate_coin_values():
-        for key_assign, val_assign in MerchantTool.complex_assigns.iteritems():
-            coin = key_assign.split(' ')[-1]
-            quantity = key_assign.split(' ')[0: -1]
-            total_quantity = MerchantTool.process_value_question(quantity)
-            MerchantTool.assigns[coin] = float(val_assign) / float(total_quantity)

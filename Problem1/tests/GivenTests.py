@@ -3,7 +3,7 @@ from TrainApp import *
 from Train.Train import Train
 
 
-class TrainTests(unittest.TestCase):
+class GivenTests(unittest.TestCase):
     def test_1(self):
         myTrainInfo = Train()
         myTrainInfo.assign_graph(process_input('../data/input.txt'))
