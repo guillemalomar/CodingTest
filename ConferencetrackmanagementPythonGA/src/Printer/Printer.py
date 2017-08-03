@@ -1,10 +1,14 @@
 
 
+# Class that contains all the logic and methods related to process
+# data to be shown correctly, needed for the application
 class Printer:
 
     def __init__(self):
         pass
 
+    # Method used by the show_result method to convert the starting
+    # minutes of the different talks to human readable format
     @staticmethod
     def mins_to_hours(mins):
         hours = mins / 60
@@ -20,6 +24,7 @@ class Printer:
             minutes = '0' + str(minutes)
         return str(hours) + ":" + str(minutes) + sufix
 
+    # Method used to show the final result on the screen
     @staticmethod
     def show_tracks(track1morning_toshow, track1afternoon_toshow, track2morning_toshow, track2afternoon_toshow):
         print "Track 1:"
@@ -33,6 +38,8 @@ class Printer:
         Printer.show_result(track2afternoon_toshow, 780)
         print "05:00PM Networking Event\n"
 
+    # Method used by the show_tracks method, to show the starting time and
+    # name of the conference, followed by the length of the talk
     @staticmethod
     def show_result(track, from_time):
         prev_time = 0

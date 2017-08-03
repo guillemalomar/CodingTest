@@ -1,10 +1,14 @@
 
 
+# Class that contains all the logic and methods related to reading the
+# input data to obtain the times of the talks, and assign the talks to
+# the available sessions
 class Scheduler:
 
     def __init__(self):
         pass
 
+    # Method used to obtain the times of the talks from the input_data
     @staticmethod
     def calculate_times(times_input_data):
         schedule_times = []
@@ -17,6 +21,7 @@ class Scheduler:
                     schedule_times.append((line, 5))
         return sorted(schedule_times, key=lambda x: x[1], reverse=True)
 
+    # Method that assigns the different talks to the available sessions
     @staticmethod
     def calculate_tracks(tracks_times):
         calculated_track1morning = {}
@@ -83,5 +88,9 @@ class Scheduler:
                     track1morning_time += entry[1]
                 else:
                     calculated_left_sessions += 1
-        return calculated_track1morning, calculated_track1afternoon, calculated_track2morning, \
-               calculated_track2afternoon, calculated_left_sessions
+
+        return calculated_track1morning,\
+               calculated_track1afternoon,\
+               calculated_track2morning, \
+               calculated_track2afternoon,\
+               calculated_left_sessions

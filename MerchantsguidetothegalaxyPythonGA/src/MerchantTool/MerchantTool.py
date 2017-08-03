@@ -1,6 +1,9 @@
 import re
 
 
+# Class that contains all the logic and methods related to the parsing
+# of the given questions, the conversion of the quantities and coins,
+# and the calculation of the value of coins
 class MerchantTool:
 
     conversions = {'X': 10, 'I': 1, 'V': 5, 'L': 50}
@@ -15,6 +18,8 @@ class MerchantTool:
     def __init__(self):
         pass
 
+    # Method that calculates the given simple assignations of each name to a quantity,
+    # and saves the questions from the input
     @staticmethod
     def calculate_assigns(input_data):
         for row in input_data:
@@ -36,6 +41,8 @@ class MerchantTool:
                         else:
                             raise SyntaxError
 
+    # Method that processes the given complex assigns to coins in order
+    # to obtain the value of each coin
     @staticmethod
     def calculate_coin_values():
         for key_assign, val_assign in MerchantTool.complex_assigns.iteritems():
@@ -44,6 +51,8 @@ class MerchantTool:
             total_quantity = MerchantTool.process_value_question(quantity)
             MerchantTool.assigns[coin] = float(val_assign) / float(total_quantity)
 
+    # Method that given a list of names of quantities, returns the total
+    # quantity.
     @staticmethod
     def process_value_question(coins):
         initial = True
@@ -62,6 +71,8 @@ class MerchantTool:
             prev_val = value
         return total_val
 
+    # Method that given a question related to coins, returns the total value
+    # of the multiplication of the quantity by the value of the coin
     @staticmethod
     def process_credits_question(coins):
         coins_to_process = []
