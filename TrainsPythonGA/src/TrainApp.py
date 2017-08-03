@@ -41,12 +41,12 @@ def insert_path():
     while not correct_path:
         chosen_path = raw_input("Please enter a path: ")
         check_input(chosen_path)
-        m = _acceptable_path.match(chosen_path)
+        m = _acceptable_path.match(chosen_path.upper())
         if m is None:
             print "Please, specify avalid"
         else:
             correct_path = True
-    return chosen_path
+    return chosen_path.upper()
 
 
 # Method that processes a given start and end station and checks if it has a correct format
@@ -56,12 +56,12 @@ def insert_strip():
     while not correct_strip:
         chosen_strip = raw_input("Please enter a strip: ")
         check_input(chosen_strip)
-        m = _acceptable_strip.match(chosen_strip)
+        m = _acceptable_strip.match(chosen_strip.upper())
         if m is None:
             print "Please, specify a XY path between stations"
         else:
             correct_strip = True
-    return chosen_strip
+    return chosen_strip.upper()
 
 
 # Method that processes a given maximum number of stops and checks if it has a correct format
@@ -86,7 +86,7 @@ def specify_stops():
     while not correct_specified_stops:
         specified_stops = raw_input("Do you want it to be the only possible nr of stops? (Y/N): ")
         check_input(specified_stops)
-        if specified_stops != 'Y' and specified_stops != 'N':
+        if specified_stops.upper() != 'Y' and specified_stops.upper() != 'N':
             print "Please, specify 'Y'(yes) or 'N'(no)"
         else:
             correct_specified_stops = True
