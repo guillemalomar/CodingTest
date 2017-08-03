@@ -9,7 +9,7 @@ def process_input(input_path):
 
 
 if __name__ == '__main__':
-    input_data = process_input('../data/input.txt')
+    input_data = process_input('ConferencetrackmanagementPythonGA/data/input.txt')
     my_scheduler = Scheduler()
     times = my_scheduler.calculate_times(input_data)
     track1morning, track1afternoon, track2morning, track2afternoon, left_sessions = Scheduler.calculate_tracks(times)

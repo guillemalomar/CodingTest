@@ -104,7 +104,7 @@ def process_input(input_path):
 
 if __name__ == '__main__':
     myTrainInfo = Train()
-    myTrainInfo.assign_graph(process_input('../data/input.txt'))
+    myTrainInfo.assign_graph(process_input('TrainsPythonGA/data/input.txt'))
 
     presentation()
 
