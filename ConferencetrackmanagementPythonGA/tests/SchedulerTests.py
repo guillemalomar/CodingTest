@@ -5,7 +5,7 @@ from Scheduler.Scheduler import Scheduler
 
 class SchedulerTests(unittest.TestCase):
     def test_calculate_times(self):
-        input_data = SchedulerApp.process_input('Problem2/tests/test_input.txt')
+        input_data = SchedulerApp.process_input('ConferencetrackmanagementPythonGA/tests/test_input.txt')
         my_scheduler = Scheduler()
         self.assertEquals(my_scheduler.calculate_times(input_data), [('talk2 60min', 60),
                                                                      ('talk3 45min', 45),
@@ -14,7 +14,7 @@ class SchedulerTests(unittest.TestCase):
                                                                      ('talk4 lightning', 5)])
 
     def test_calculate_tracks(self):
-        input_data = SchedulerApp.process_input('Problem2/tests/test_input2.txt')
+        input_data = SchedulerApp.process_input('ConferencetrackmanagementPythonGA/tests/test_input2.txt')
         my_scheduler = Scheduler()
         times = my_scheduler.calculate_times(input_data)
         self.assertEquals(my_scheduler.calculate_tracks(times), ({0: ('talk12 60min', 60),
@@ -32,7 +32,7 @@ class SchedulerTests(unittest.TestCase):
                                                                   180: ('talk4 60min', 60),
                                                                   60: ('talk2 60min', 60)},
                                                                  0))
-        input_data = SchedulerApp.process_input('Problem2/tests/test_input3.txt')
+        input_data = SchedulerApp.process_input('ConferencetrackmanagementPythonGA/tests/test_input3.txt')
         my_scheduler = Scheduler()
         times = my_scheduler.calculate_times(input_data)
         self.assertEquals(my_scheduler.calculate_tracks(times), ({0: ('talk12 60min', 60),
