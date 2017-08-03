@@ -5,7 +5,7 @@ from CoinValueQuestionsParser import process_input
 
 class MerchantToolTests(unittest.TestCase):
     def test_calculate_assigns(self):
-        input_data = process_input('test_input.txt')
+        input_data = process_input('Problem3/tests/test_input.txt')
         my_merchant = MerchantTool()
         my_merchant.calculate_assigns(input_data)
         self.assertEquals(my_merchant.assigns, {'fifty': 'L',
@@ -22,7 +22,7 @@ class MerchantToolTests(unittest.TestCase):
                                                   'how much wood could a woodchuck chuck if a woodchuck could chuck wood ?'])
 
     def test_calculate_assigns_exc(self):
-        input_data = process_input('test_input_2.txt')
+        input_data = process_input('Problem3/tests/test_input_2.txt')
         my_merchant = MerchantTool()
         raisenError = False
         try:
@@ -32,7 +32,7 @@ class MerchantToolTests(unittest.TestCase):
         self.assertEqual(raisenError, True)
 
     def test_calculate_coin_values(self):
-        input_data = process_input('test_input.txt')
+        input_data = process_input('Problem3/tests/test_input.txt')
         my_merchant = MerchantTool()
         my_merchant.calculate_assigns(input_data)
         my_merchant.calculate_coin_values()
@@ -41,7 +41,7 @@ class MerchantToolTests(unittest.TestCase):
         self.assertEquals(my_merchant.assigns['Iron'], 3.0)
 
     def test_process_value_question(self):
-        input_data = process_input('test_input.txt')
+        input_data = process_input('Problem3/tests/test_input.txt')
         my_merchant = MerchantTool()
         my_merchant.calculate_assigns(input_data)
         my_merchant.calculate_coin_values()
@@ -50,7 +50,7 @@ class MerchantToolTests(unittest.TestCase):
         self.assertEquals(my_merchant.process_value_question(['fifty', 'ten', 'five', 'one', 'one']), 67)
 
     def test_process_credits_question(self):
-        input_data = process_input('test_input.txt')
+        input_data = process_input('Problem3/tests/test_input.txt')
         my_merchant = MerchantTool()
         my_merchant.calculate_assigns(input_data)
         my_merchant.calculate_coin_values()
