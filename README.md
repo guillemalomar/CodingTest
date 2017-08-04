@@ -46,7 +46,8 @@ Explanation of the chosen application design
 
 ############################################################
 
-   A general view of the folders structure can be seen in:  
+   A general view of the folders structure can be seen in:
+   
        Documentation/ProjectFolder.png                                    
 
 ############################################################
