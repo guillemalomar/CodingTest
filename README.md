@@ -31,10 +31,15 @@ Explanation of the chosen application design
 3) Merchant's Guide to the Galaxy
    For this problem I had to make some assumptions about how the statements in the input were
    shaped. I divided them in 4 types:
+   
    X is Y
+   
    x1 .. xn coin is val Credits
+   
    how much is x1 .. xn ?
+   
    how many Credits is x1 .. xn coin ?
+   
    Any statement that doesn't follow this logic won't be processed. Also I noticed the first
    time I thought the problem was solved that the value of coins could be floats, so I had
    to modify the application accordingly (didn't take more than 2 mins). 
@@ -46,18 +51,25 @@ Explanation of the chosen application design
 
 ############################################################
 
+* EXECUTION
+
 To run the applications, type from the main folder:
 
 1) Trains Application
+
        python TrainsPythonGA/src/TrainApp.py $optional_input_path
 
 2) Conference Track Management
+
        python ConferencetrackmanagementPythonGA/src/SchedulerApp.py $optional_input_path
 
 3) Merchant's Guide to the Galaxy
+
        python MerchantsguidetothegalaxyPythonGA/src/CoinValueQuestionsParser.py $optional_input_path
 
 ############################################################
+
+* TESTING
 
 As requested, several tests have been added.
 In order to run them, execute them from the main folder. Paths to each of the tests files can be
