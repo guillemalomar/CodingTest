@@ -1,5 +1,41 @@
 # Job Offer test
 
+This is a code test I made for a job offer.
+
+############################################################
+
+* REQUIREMENTS
+
+Python +2.7                                    
+
+############################################################
+
+* EXECUTION
+
+To run the applications, type from the main folder:
+
+1) Trains Application
+
+       python TrainsPythonGA/src/TrainApp.py $optional_input_path
+
+2) Conference Track Management
+
+       python ConferencetrackmanagementPythonGA/src/SchedulerApp.py $optional_input_path
+
+3) Merchant's Guide to the Galaxy
+
+       python MerchantsguidetothegalaxyPythonGA/src/CoinValueQuestionsParser.py $optional_input_path
+
+############################################################
+
+* TESTING
+
+As requested, several tests have been added.
+In order to run them, execute them from the main folder. Paths to each of the tests files can be
+found in the file:
+
+       tests_runner.txt
+
 ############################################################
 
 Explanation of the chosen application design
@@ -48,34 +84,4 @@ Explanation of the chosen application design
 
    A general view of the folders structure can be seen in:
    
-       Documentation/ProjectFolder.png                                    
-
-############################################################
-
-* EXECUTION
-
-To run the applications, type from the main folder:
-
-1) Trains Application
-
-       python TrainsPythonGA/src/TrainApp.py $optional_input_path
-
-2) Conference Track Management
-
-       python ConferencetrackmanagementPythonGA/src/SchedulerApp.py $optional_input_path
-
-3) Merchant's Guide to the Galaxy
-
-       python MerchantsguidetothegalaxyPythonGA/src/CoinValueQuestionsParser.py $optional_input_path
-
-############################################################
-
-* TESTING
-
-As requested, several tests have been added.
-In order to run them, execute them from the main folder. Paths to each of the tests files can be
-found in the file:
-
-       tests_runner.txt
-
-I had already made a script that run all tests, but as no executables can be send I had to delete it.
+       Documentation/ProjectFolder.png
